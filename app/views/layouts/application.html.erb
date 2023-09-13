@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  # title 
-  <title>SNS App</title>
+<head> 
+  <title>Flowchart App</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  # Style 
+  <%= csp_meta_tag %> 
   <link rel="stylesheet" href="<%= mix('/css/app.css') %>">
-  # Javascript 
   <script src="<%= mix('/js/bootstrap.js') %>"></script>
-  # 2-8 turbo.jsを追加
   <script src="<%= mix('/js/turbo.js') %>"></script>
 </head>
 
 <body>
   <div class="main-container">
-    #  ナビゲーションバー 
     <nav class="custom-navbar">
       <div id="menuToggle">
         <input type="checkbox" />
@@ -24,7 +19,6 @@
         <span></span>
         <span></span>
         <ul id="menu">
-          # 2-8 追加
           <% if user_signed_in? %>
             <li>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
@@ -46,8 +40,7 @@
         </ul>
       </div>
     </nav>
-
-    # アラートメッセージ 
+ 
     <% if notice %>
       <div class="alert alert-success" role="alert">
         <%= notice %>
@@ -62,8 +55,8 @@
     <div class="bg-white text-dark">
       <%= yield %>
     </div>
-  </div>
-  # Javascript 
+  </div> 
+  
   <script src="<%= mix('/js/app.js') %>"></script>
 </body>
 </html>
